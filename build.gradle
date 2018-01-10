@@ -1,0 +1,29 @@
+group 'tc'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.5
+
+buildscript {
+    repositories {
+        maven { url mavenCentral }
+    }
+}
+
+allprojects { project ->
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+
+    repositories {
+        maven { url mavenCentral }
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile group: 'io.netty', name: 'netty-all', version: '5.0.0.Alpha1'
+    compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
+    compile group: 'commons-logging', name: 'commons-logging', version: '1.2'
+
+}
